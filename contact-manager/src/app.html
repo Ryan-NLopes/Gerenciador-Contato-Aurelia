@@ -1,9 +1,6 @@
 <template>
   <require from="./styles.css"></require>
   <require from="./contact-list/contact-list"></require>
-  <require from="./contact-detail"></require>
- 
-
 
   <nav class="navbar navbar-light bg-light border-bottom fixed-top" role="navigation">
     <a class="navbar-brand" href="#">
@@ -12,6 +9,8 @@
     </a>
   </nav>
 
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
+
   <div class="container-md">
     <div class="row">
       <contact-list class="col-sm-5 col-md-4"></contact-list>
@@ -19,4 +18,3 @@
     </div>
   </div>
 </template>
-
